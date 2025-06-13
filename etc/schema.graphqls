@@ -1,0 +1,18 @@
+type Mutation {
+    createEnquiry(input: EnquiryInput!): CreateEnquiryOutput@resolver(class: "Tcz\\Enquiry\\Model\\Resolver\\createEnquiry")
+}
+
+input EnquiryInput {
+    name: String!
+    email: String!
+    phone: String!
+    message: String!
+    status: Int!
+    enquiry_type: String!
+}
+
+type CreateEnquiryOutput {
+    success: Boolean
+    message: String
+    enquiry_id: Int
+}
